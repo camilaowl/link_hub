@@ -12,27 +12,22 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   min-width: 320px;
+  min-height: 100%;
   background: #f4f1e8;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
   color: #171814;
-  background: #f4f1e8;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-p,
-h1 {
-  margin: 0;
 }
 
 .page-shell {
@@ -48,12 +43,14 @@ h1 {
   position: relative;
   z-index: 1;
   display: flex;
-  flex: 1;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  max-width: 80rem;
+  max-width: 36rem;
+  min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
-  padding: 2rem 3rem;
+  padding: 3rem 2rem;
 }
 
 .contact-glow {
@@ -79,182 +76,24 @@ h1 {
   background: radial-gradient(circle, rgb(244 196 85 / 66%) 0%, rgb(244 196 85 / 0%) 68%);
 }
 
-.page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.logo-link {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto 3rem;
+  border-radius: 1rem;
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-radius: 9999px;
-}
-
-.brand:focus-visible,
+.logo-link:focus-visible,
 .contact-link:focus-visible {
-  outline: 2px solid #4b62ff;
+  outline: 2px solid #0873ce;
   outline-offset: 4px;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  color: white;
-  background: #171814;
-  font-size: 0.875rem;
-  font-weight: 700;
-  transition: transform 300ms ease;
-}
-
-.brand:hover .brand-mark {
-  transform: rotate(6deg);
-}
-
-.brand-name {
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.availability {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgb(0 0 0 / 10%);
-  border-radius: 9999px;
-  padding: 0.5rem 1rem;
-  color: rgb(0 0 0 / 60%);
-  background: rgb(255 255 255 / 55%);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
-  font-size: 0.75rem;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-}
-
-.availability-dot {
-  position: relative;
-  display: flex;
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-.availability-ping,
-.availability-core {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: #48a868;
-}
-
-.availability-ping {
-  opacity: 0.4;
-  animation: ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.hero {
-  display: grid;
-  flex: 1;
-  grid-template-columns: minmax(0, 0.9fr) minmax(26rem, 0.75fr);
-  align-items: center;
-  gap: 5rem;
-  padding: 2.5rem 0;
-}
-
-.hero-copy {
-  max-width: 42rem;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  color: rgb(0 0 0 / 45%);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.eyebrow span {
-  width: 2.25rem;
-  height: 1px;
-  background: #4b62ff;
-}
-
-h1 {
-  max-width: 42rem;
-  font-size: clamp(3.6rem, 9vw, 7.5rem);
-  font-weight: 700;
-  line-height: 0.86;
-  letter-spacing: -0.07em;
-  text-wrap: balance;
-}
-
-h1 span {
-  color: #4b62ff;
-}
-
-.intro {
-  max-width: 32rem;
-  margin-top: 2rem;
-  color: rgb(0 0 0 / 60%);
-  font-size: 1.125rem;
-  line-height: 1.75;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
-  max-width: 36rem;
-  margin-top: 2rem;
-}
-
-.service-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  min-height: 3.25rem;
-  border: 1px solid rgb(23 24 20 / 9%);
-  border-radius: 1rem;
-  padding: 0.75rem 0.875rem;
-  color: rgb(23 24 20 / 76%);
-  background: rgb(255 255 255 / 42%);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  backdrop-filter: blur(10px);
-}
-
-.service-mark {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 0.4rem;
-  color: white;
-  font-size: 0.65rem;
-  font-weight: 800;
-}
-
-.service-mark--plumbing {
-  background: #4b62ff;
-}
-
-.service-mark--heating {
-  background: #ef6a5b;
-}
-
-.service-mark--filtration {
-  background: #229ed9;
+.logo-link img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .contact-links {
@@ -266,12 +105,11 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 5.5rem;
+  min-height: 5.25rem;
   border: 1px solid rgb(23 24 20 / 10%);
   border-radius: 1.25rem;
   padding: 0.875rem;
-  color: #171814;
-  background: rgb(255 255 255 / 62%);
+  background: rgb(255 255 255 / 68%);
   box-shadow: 0 0.75rem 2.5rem rgb(48 46 38 / 5%);
   backdrop-filter: blur(14px);
   transition:
@@ -284,7 +122,7 @@ h1 span {
 .contact-link:hover {
   transform: translateY(-3px);
   border-color: rgb(23 24 20 / 20%);
-  background: rgb(255 255 255 / 90%);
+  background: rgb(255 255 255 / 92%);
   box-shadow: 0 1rem 3rem rgb(48 46 38 / 10%);
 }
 
@@ -303,21 +141,30 @@ h1 span {
   transition: transform 220ms ease;
 }
 
-.contact-icon--phone {
+.contact-icon.contact-icon--phone {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0.125rem;
+  border-radius: 9999px;
   color: #171814;
   background: #f1b944;
 }
 
-.contact-icon--telegram {
-  background: #229ed9;
+.contact-icon--brand {
+  padding: 0.125rem;
+  background: transparent;
+  box-shadow: none;
 }
 
-.contact-icon--viber {
-  background: #7360f2;
+.contact-icon--brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.contact-icon--tiktok {
-  background: #171814;
+.contact-icon--tiktok img {
+  transform: scale(1.16);
 }
 
 .contact-link:hover .contact-icon {
@@ -374,74 +221,13 @@ h1 span {
   transform: translate(2px, -2px);
 }
 
-.page-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid rgb(0 0 0 / 10%);
-  padding-top: 1.25rem;
-  color: rgb(0 0 0 / 45%);
-  font-size: 0.75rem;
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@media (max-width: 62rem) {
-  .page-container {
-    padding: 2rem;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 4rem 0;
-  }
-
-  .hero-copy {
-    max-width: 46rem;
-  }
-}
-
 @media (max-width: 40rem) {
   .page-container {
-    padding: 1.5rem 1.25rem;
+    padding: 2.5rem 1.25rem;
   }
 
-  .availability {
-    padding-inline: 0.75rem;
-  }
-
-  .brand-name {
-    display: none;
-  }
-
-  .hero {
-    gap: 2.75rem;
-    padding: 3.5rem 0;
-  }
-
-  .eyebrow {
-    font-size: 0.7rem;
-  }
-
-  h1 {
-    font-size: clamp(3.5rem, 18vw, 5rem);
-  }
-
-  .intro {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .services {
-    grid-template-columns: 1fr;
+  .logo-link {
+    margin-bottom: 2.5rem;
   }
 
   .contact-link {
@@ -455,9 +241,9 @@ h1 span {
     border-radius: 0.875rem;
   }
 
-  .page-footer {
-    align-items: flex-start;
-    flex-direction: column;
+  .contact-icon.contact-icon--phone {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 

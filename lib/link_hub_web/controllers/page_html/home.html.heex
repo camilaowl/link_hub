@@ -5,144 +5,129 @@
   <div class="contact-glow contact-glow--top" aria-hidden="true"></div>
   <div class="contact-glow contact-glow--bottom" aria-hidden="true"></div>
 
-  <div class="relative mx-auto flex w-full max-w-7xl flex-col px-5 py-6 sm:px-8 sm:py-8 lg:px-12">
-    <header class="flex items-center justify-between" aria-label="Page header">
+  <div class="relative mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-5 py-12 sm:px-8">
+    <a
+      id="home-link"
+      href={~p"/"}
+      class="mx-auto mb-12 block w-full max-w-[28rem] rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#0873ce]"
+      aria-label="Santehstyl home"
+    >
+      <img
+        src={~p"/images/santehstyl-logo.png"}
+        width="454"
+        height="124"
+        alt="Santehstyl"
+        class="h-auto w-full"
+      />
+    </a>
+
+    <nav id="contact-links" class="grid gap-3" aria-label="Contact links">
       <a
-        id="home-link"
-        href={~p"/"}
-        class="group inline-flex items-center gap-3 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4b62ff]"
+        id="phone-link"
+        href="tel:+380631326012"
+        class="contact-link group"
+        aria-label="Call Santehstyl at +380 63 132 60 12"
       >
-        <span class="grid size-10 place-items-center rounded-full bg-[#171814] text-sm font-semibold text-white transition-transform duration-300 group-hover:rotate-6">
-          SS
+        <span class="contact-link__icon contact-link__icon--phone contact-link__icon--round bg-[#f1b944] text-[#171814]">
+          <.icon name="hero-phone" class="size-6" />
         </span>
-        <span class="text-sm font-semibold tracking-[-0.01em]">Santehstyl</span>
+        <span class="min-w-0 flex-1">
+          <span class="contact-link__value">+380 63 132 60 12</span>
+        </span>
+        <span class="contact-link__arrow" aria-hidden="true">
+          <.icon name="hero-arrow-up-right" class="size-5" />
+        </span>
       </a>
 
-      <div class="flex items-center gap-2 rounded-full border border-black/10 bg-white/55 px-3 py-2 text-xs font-medium text-black/60 shadow-sm backdrop-blur-sm sm:px-4">
-        <span class="relative flex size-2">
-          <span class="absolute inline-flex size-full animate-ping rounded-full bg-[#48a868] opacity-40"></span>
-          <span class="relative inline-flex size-2 rounded-full bg-[#48a868]"></span>
+      <a
+        id="telegram-link"
+        href="https://t.me/+380631326012"
+        target="_blank"
+        rel="noreferrer"
+        class="contact-link group"
+        aria-label="Message Santehstyl on Telegram"
+      >
+        <span class="contact-link__icon contact-link__icon--brand">
+          <img
+            src={~p"/images/Telegram_logo.svg"}
+            alt=""
+            class="size-full object-contain"
+          />
         </span>
-        Available for projects
-      </div>
-    </header>
+        <span class="min-w-0 flex-1">
+          <span class="contact-link__value">Telegram</span>
+        </span>
+        <span class="contact-link__arrow" aria-hidden="true">
+          <.icon name="hero-arrow-up-right" class="size-5" />
+        </span>
+      </a>
 
-    <section class="grid flex-1 items-center gap-12 py-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(26rem,0.75fr)] lg:gap-20 lg:py-10">
-      <div class="max-w-2xl">
-        <p class="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-sm">
-          <span class="h-px w-9 bg-[#4b62ff]"></span> Plumbing entrepreneur
-        </p>
+      <a
+        id="viber-link"
+        href="viber://chat?number=%2B380631326012"
+        class="contact-link group"
+        aria-label="Message Santehstyl on Viber"
+      >
+        <span class="contact-link__icon contact-link__icon--brand">
+          <img
+            src={~p"/images/Chat_on_Viber_icon.svg"}
+            alt=""
+            class="size-full object-contain"
+          />
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="contact-link__value">Viber</span>
+        </span>
+        <span class="contact-link__arrow" aria-hidden="true">
+          <.icon name="hero-arrow-up-right" class="size-5" />
+        </span>
+      </a>
 
-        <h1 class="max-w-2xl text-[clamp(3.6rem,9vw,7.5rem)] font-semibold leading-[0.86] tracking-[-0.07em] text-balance">
-          Water. Heat.<br />Comfort<span class="text-[#4b62ff]">.</span>
-        </h1>
+      <a
+        id="whatsapp-link"
+        href="https://wa.me/380631326012"
+        target="_blank"
+        rel="noreferrer"
+        class="contact-link group"
+        aria-label="Message Santehstyl on WhatsApp"
+      >
+        <span class="contact-link__icon contact-link__icon--brand">
+          <img
+            src={~p"/images/whatsapp-com-logo.svg"}
+            alt=""
+            class="size-full object-contain"
+          />
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="contact-link__value">WhatsApp</span>
+        </span>
+        <span class="contact-link__arrow" aria-hidden="true">
+          <.icon name="hero-arrow-up-right" class="size-5" />
+        </span>
+      </a>
 
-        <p class="mt-8 max-w-lg text-base leading-7 text-black/60 sm:text-lg sm:leading-8">
-          Professional solutions for plumbing, heating, and water filtration. Get in touch to discuss what your home or business needs.
-        </p>
-
-        <div
-          id="services"
-          class="mt-8 grid max-w-xl grid-cols-1 gap-2 sm:grid-cols-3"
-          aria-label="Services"
-        >
-          <div class="service-chip">
-            <.icon name="hero-wrench-screwdriver" class="size-5 text-[#4b62ff]" />
-            <span>Plumbing</span>
-          </div>
-          <div class="service-chip">
-            <.icon name="hero-fire" class="size-5 text-[#ef6a5b]" />
-            <span>Heating</span>
-          </div>
-          <div class="service-chip">
-            <.icon name="hero-funnel" class="size-5 text-[#229ed9]" />
-            <span>Filtration</span>
-          </div>
-        </div>
-      </div>
-
-      <div id="contact-links" class="grid gap-3" aria-label="Contact options">
-        <a
-          id="phone-link"
-          href="tel:+380631326012"
-          class="contact-link group"
-          aria-label="Call Santehstyl at +380 63 132 60 12"
-        >
-          <span class="contact-link__icon bg-[#f1b944] text-[#171814]">
-            <.icon name="hero-phone" class="size-6" />
-          </span>
-          <span class="min-w-0 flex-1">
-            <span class="contact-link__label">Call directly</span>
-            <span class="contact-link__value">+380 63 132 60 12</span>
-          </span>
-          <span class="contact-link__arrow" aria-hidden="true">
-            <.icon name="hero-arrow-up-right" class="size-5" />
-          </span>
-        </a>
-
-        <a
-          id="telegram-link"
-          href="https://t.me/+380631326012"
-          target="_blank"
-          rel="noreferrer"
-          class="contact-link group"
-          aria-label="Message Santehstyl on Telegram"
-        >
-          <span class="contact-link__icon bg-[#229ed9] text-white">
-            <.icon name="hero-paper-airplane" class="size-6 -rotate-12" />
-          </span>
-          <span class="min-w-0 flex-1">
-            <span class="contact-link__label">Telegram</span>
-            <span class="contact-link__value">Message by phone number</span>
-          </span>
-          <span class="contact-link__arrow" aria-hidden="true">
-            <.icon name="hero-arrow-up-right" class="size-5" />
-          </span>
-        </a>
-
-        <a
-          id="viber-link"
-          href="viber://chat?number=%2B380631326012"
-          class="contact-link group"
-          aria-label="Message Santehstyl on Viber"
-        >
-          <span class="contact-link__icon bg-[#7360f2] text-white">
-            <.icon name="hero-chat-bubble-oval-left-ellipsis" class="size-6" />
-          </span>
-          <span class="min-w-0 flex-1">
-            <span class="contact-link__label">Viber</span>
-            <span class="contact-link__value">Message by phone number</span>
-          </span>
-          <span class="contact-link__arrow" aria-hidden="true">
-            <.icon name="hero-arrow-up-right" class="size-5" />
-          </span>
-        </a>
-
-        <a
-          id="tiktok-link"
-          href="https://www.tiktok.com/@santehstyl.ua?_r=1&_t=ZS-9BTZwjj0I2K"
-          target="_blank"
-          rel="noreferrer"
-          class="contact-link group"
-          aria-label="Follow Santehstyl on TikTok"
-        >
-          <span class="contact-link__icon bg-[#171814] text-white">
-            <.icon name="hero-musical-note" class="size-6" />
-          </span>
-          <span class="min-w-0 flex-1">
-            <span class="contact-link__label">TikTok</span>
-            <span class="contact-link__value">@santehstyl.ua</span>
-          </span>
-          <span class="contact-link__arrow" aria-hidden="true">
-            <.icon name="hero-arrow-up-right" class="size-5" />
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <footer class="flex flex-col gap-2 border-t border-black/10 pt-5 text-xs text-black/45 sm:flex-row sm:items-center sm:justify-between">
-      <p>Santehstyl · Plumbing, heating &amp; filtration</p>
-      <p>Call or message to discuss your project.</p>
-    </footer>
+      <a
+        id="tiktok-link"
+        href="https://www.tiktok.com/@santehstyl.ua?_r=1&_t=ZS-9BTZwjj0I2K"
+        target="_blank"
+        rel="noreferrer"
+        class="contact-link group"
+        aria-label="Follow Santehstyl on TikTok"
+      >
+        <span class="contact-link__icon contact-link__icon--brand contact-link__icon--tiktok">
+          <img
+            src={~p"/images/tiktok-com-logo.png"}
+            alt=""
+            class="size-full object-contain"
+          />
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="contact-link__value">TikTok</span>
+        </span>
+        <span class="contact-link__arrow" aria-hidden="true">
+          <.icon name="hero-arrow-up-right" class="size-5" />
+        </span>
+      </a>
+    </nav>
   </div>
 </main>
