@@ -103,6 +103,16 @@
   transition: transform 220ms ease;
 }
 
+.contact-link__icon--brand {
+  padding: 0.125rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-link__icon.contact-link__icon--round {
+  border-radius: 9999px;
+}
+
 .contact-link:hover .contact-link__icon {
   transform: scale(1.05) rotate(-2deg);
 }
