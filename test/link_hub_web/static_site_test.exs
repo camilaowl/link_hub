@@ -48,5 +48,11 @@ defmodule LinkHubWeb.StaticSiteTest do
 
     assert LazyHTML.attribute(LazyHTML.query(document, "#tiktok-link img"), "src") ==
              ["./tiktok-com-logo.png"]
+
+    assert LazyHTML.attribute(
+             LazyHTML.query(document, "#tiktok-link > span:first-child"),
+             "class"
+           )
+           |> Enum.any?(&String.contains?(&1, "contact-icon--tiktok"))
   end
 end

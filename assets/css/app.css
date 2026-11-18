@@ -113,6 +113,16 @@
   border-radius: 9999px;
 }
 
+.contact-link__icon.contact-link__icon--phone {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0.125rem;
+}
+
+.contact-link__icon--tiktok img {
+  transform: scale(1.16);
+}
+
 .contact-link:hover .contact-link__icon {
   transform: scale(1.05) rotate(-2deg);
 }
@@ -171,6 +181,11 @@
     width: 3rem;
     height: 3rem;
     border-radius: 0.875rem;
+  }
+
+  .contact-link__icon.contact-link__icon--phone {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 
