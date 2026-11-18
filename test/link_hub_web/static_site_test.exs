@@ -1,15 +1,31 @@
 defmodule LinkHubWeb.StaticSiteTest do
-  use ExUnit.Case, async: true
+  use LinkHubWeb.ConnCase, async: true
 
-  test "GitHub Pages export contains the landing page and contact links" do
+  test "GitHub Pages export matches the Phoenix landing page", %{conn: conn} do
     document =
       "docs/index.html"
       |> File.read!()
       |> LazyHTML.from_document()
 
+    phoenix_document =
+      conn
+      |> get(~p"/")
+      |> html_response(200)
+      |> LazyHTML.from_document()
+
     assert Enum.count(LazyHTML.query(document, "#contact-page")) == 1
     assert Enum.count(LazyHTML.query(document, "h1, .intro, #services")) == 0
     assert Enum.count(LazyHTML.query(document, "#contact-links > a")) == 5
+    assert Enum.count(LazyHTML.query(document, ".contact-label")) == 0
+    assert Enum.count(LazyHTML.query(document, ".contact-arrow svg")) == 5
+    assert Enum.count(LazyHTML.query(document, "#phone-link .phone-icon")) == 1
+
+    assert document
+           |> LazyHTML.query(".contact-value")
+           |> Enum.map(&LazyHTML.text/1) ==
+             ["+380 63 132 60 12", "Telegram", "Viber", "WhatsApp", "TikTok"]
+
+    assert contact_summary(document) == contact_summary(phoenix_document)
     assert File.regular?("docs/santehstyl-logo.png")
     assert File.regular?("docs/Telegram_logo.svg")
     assert File.regular?("docs/Chat_on_Viber_icon.svg")
@@ -54,5 +70,21 @@ defmodule LinkHubWeb.StaticSiteTest do
              "class"
            )
            |> Enum.any?(&String.contains?(&1, "contact-icon--tiktok"))
+  end
+
+  defp contact_summary(document) do
+    for id <- ~w(phone telegram viber whatsapp tiktok) do
+      link = LazyHTML.query(document, "##{id}-link")
+      value = LazyHTML.query(link, ".contact-link__value, .contact-value")
+
+      {
+        id,
+        LazyHTML.attribute(link, "href"),
+        LazyHTML.attribute(link, "target"),
+        LazyHTML.attribute(link, "rel"),
+        LazyHTML.attribute(link, "aria-label"),
+        LazyHTML.text(value)
+      }
+    end
   end
 end
